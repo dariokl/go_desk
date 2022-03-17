@@ -11,11 +11,7 @@ const Clock = () => {
     };
   }, []);
 
-  return (
-    <div>
-      {value.getHours()}: {value.getMinutes()}
-    </div>
-  );
+  return <div>{value.toLocaleTimeString([], { timeStyle: "short" })}</div>;
 };
 
 export default Clock;

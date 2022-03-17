@@ -2,7 +2,7 @@ import React from "react";
 
 import Icon from "../base/Icon";
 
-const Item = () => {
+const Item = ({ title, icon, onClick }) => {
   return (
     <div
       className="
@@ -23,6 +23,7 @@ const Item = () => {
     hover:-translate-y-1 
     hover:scale-100 
     motion-reduce:transform-none"
+      onClick={onClick}
     >
       <div
         className="
@@ -34,9 +35,9 @@ const Item = () => {
       p-0.5
       group-hover:visible"
       >
-        Title
+        {title}
       </div>
-      <Icon name="IoIosHome" size="24" />
+      <Icon name={icon} size="24" />
     </div>
   );
 };

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { WindowContext } from "../../windowsContext";
 import Item from "./Item";
 import Clock from "./Clock";
 
-const TaskBar = () => {
+const TaskBar = ({ onIconClick }) => {
+  const windows = useContext(WindowContext);
+
   return (
     <div
       className="
@@ -22,9 +25,14 @@ const TaskBar = () => {
      backdrop-blur-lg 
      backdrop-filter"
     >
-      <Item />
-      <Item />
-      <Item />
+      {windows.map((window) => (
+        <Item
+          key={window.id}
+          title={window.name}
+          icon={window.icon}
+          onClick={() => onIconClick(window.id)}
+        />
+      ))}
       <span className="h-8 w-px bg-white"></span>
       <Clock />
     </div>
