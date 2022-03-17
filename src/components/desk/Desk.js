@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
-import { WindowContext } from "../../windowsContext";
+import React from "react";
 
 import Window from "../window/Window";
 
-const Desk = () => {
-  const windows = useContext(WindowContext);
-
+const Desk = ({ windows }) => {
   return (
     <div>
       {windows.map((window) =>

@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { WindowContext } from "../../windowsContext";
 import Item from "./Item";
 import Clock from "./Clock";
 
-const TaskBar = ({ onIconClick }) => {
-  const windows = useContext(WindowContext);
-
+const TaskBar = ({ onIconClick, windows }) => {
   return (
     <div
       className="
