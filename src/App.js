@@ -17,6 +17,18 @@ const App = () => {
     },
     [windows]
   );
+
+  const onCloseWindow = useCallback(
+    (id) => {
+      console.log("here");
+      setWindows(
+        windows.map((window) =>
+          window.id === id ? { ...window, active: !window.active } : window
+        )
+      );
+    },
+    [windows]
+  );
   return (
     <div
       className="grid grid-cols-4"
@@ -27,7 +39,7 @@ const App = () => {
     >
       <div className="col-span-1 h-screen-max-vh text-white">Side Bar</div>
       <div className="desk-container col-span-3 h-screen-max-vh">
-        <Desk windows={windows} />
+        <Desk windows={windows} onCloseWindow={(id) => onCloseWindow(id)} />
       </div>
       <div className="col-span-4 flex h-screen-fill-vh items-center justify-center text-white">
         <TaskBar windows={windows} onIconClick={(id) => onIconClick(id)} />

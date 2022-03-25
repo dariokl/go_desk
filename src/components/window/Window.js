@@ -1,14 +1,41 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import { windowConfig } from "../../utils/contants";
 import { Rnd } from "react-rnd";
 import { Renderer } from "../Renderer";
 
-const Window = ({ name, item }) => {
+import Icon from "../base/Icon";
+
+const Window = ({ item, onCloseWindow }) => {
   const [position, setPosition] = useState({
     width: 400,
-    height: 200,
+    height: 400,
     x: 10,
     y: 10,
   });
+
+  const minMaxWindow = useCallback(() => {
+    const isMax = () => {
+      if (
+        position.height === windowConfig.maxHeight &&
+        position.width === windowConfig.maxWidth
+      ) {
+        return true;
+      }
+      return false;
+    };
+
+    isMax()
+      ? setPosition({
+          ...position,
+          width: windowConfig.minWidth,
+          height: windowConfig.minHeight,
+        })
+      : setPosition({
+          ...position,
+          width: windowConfig.maxWidth,
+          height: windowConfig.maxHeight,
+        });
+  }, [position]);
 
   return (
     <Rnd
@@ -24,10 +51,10 @@ const Window = ({ name, item }) => {
           ...position,
         });
       }}
-      minWidth={400}
-      minHeight={200}
-      maxWidth={800}
-      maxHeight={600}
+      minWidth={windowConfig.minWidth}
+      minHeight={windowConfig.min}
+      maxWidth={windowConfig.maxWidth}
+      maxHeight={windowConfig.maxHeight}
       bounds=".desk-container"
     >
       <div
@@ -41,6 +68,18 @@ const Window = ({ name, item }) => {
   backdrop-blur-lg
   backdrop-filter"
       >
+        <div className="flex cursor-default justify-end">
+          <Icon
+            name="IoIosSquareOutline"
+            size={26}
+            onClick={minMaxWindow}
+          ></Icon>
+          <Icon
+            name="IoIosClose"
+            size={26}
+            onClick={() => onCloseWindow(item.id)}
+          ></Icon>
+        </div>
         <Renderer config={item} />
       </div>
     </Rnd>

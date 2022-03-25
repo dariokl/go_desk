@@ -3,9 +3,14 @@ import { initialState, reducer } from "./reducer";
 
 import Search from "../base/Search";
 import NavButtons from "../base/NavButtons";
+import List from "../base/List";
 
 const History = () => {
   const [history, dispatch] = useReducer(reducer, initialState);
+
+  const getSearchPlaceHolder = () => {
+    return history.buttons.find((button) => button.active);
+  };
 
   const onButtonClick = useCallback(
     (name) => {
@@ -16,8 +21,9 @@ const History = () => {
 
   return (
     <div className="flex flex-col">
-      <Search />
+      <Search placeholder={getSearchPlaceHolder().searchPlaceholder} />
       <NavButtons buttons={history.buttons} onClick={onButtonClick} />
+      <List items={history.bookmarks} />
     </div>
   );
 };

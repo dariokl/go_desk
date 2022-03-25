@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "../base/Icon";
 
-const Search = () => {
+const Search = ({ placeholder }) => {
   return (
     <div className="relative mx-auto pt-2 ">
       <input
@@ -19,6 +19,7 @@ const Search = () => {
     focus:outline-none"
         type="text"
         name="search"
+        placeholder={placeholder}
       />
       <button type="submit" className="absolute right-0 top-0 mt-5 mr-4">
         <Icon name="IoIosSearch" size="16" />
