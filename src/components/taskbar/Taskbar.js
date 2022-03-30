@@ -3,25 +3,11 @@ import React from "react";
 import Item from "./Item";
 import Clock from "./Clock";
 
+import { taskBarWrapperCN, dividerCN } from "./styles";
+
 const TaskBar = ({ onIconClick, windows }) => {
   return (
-    <div
-      className="
-     flex 
-     w-fit
-     items-center 
-     justify-center 
-     gap-3 
-     rounded-lg 
-     bg-gray-400 
-     bg-opacity-50
-     p-1
-     outline 
-     outline-1 
-     outline-white
-     backdrop-blur-lg 
-     backdrop-filter"
-    >
+    <div className={taskBarWrapperCN}>
       {windows.map((window) => (
         <Item
           key={window.id}
@@ -30,7 +16,7 @@ const TaskBar = ({ onIconClick, windows }) => {
           onClick={() => onIconClick(window.id)}
         />
       ))}
-      <span className="h-8 w-px bg-white"></span>
+      <span className={dividerCN}></span>
       <Clock />
     </div>
   );

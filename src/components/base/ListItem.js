@@ -1,11 +1,18 @@
 import React from "react";
 
+import { listItemCN, listItemButtonCN } from "./styles";
+
 const ListItem = ({ item }) => {
   return (
-    <li className="flex justify-between p-3 transition delay-500 hover:bg-white hover:shadow-lg">
-      <div className="flex justify-between">
-        <span> {item.name}</span>
-        <div className="flex"></div>
+    <li className={listItemCN}>
+      <span>{item.title}</span>
+      <div className="flex">
+        <button className={listItemButtonCN({ isSaveButton: true })}>
+          Save
+        </button>
+        <button className={listItemButtonCN({ isSaveButton: false })}>
+          Cancel
+        </button>
       </div>
     </li>
   );

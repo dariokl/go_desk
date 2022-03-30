@@ -4,6 +4,8 @@ import { windowsConfig } from "./utils/windowsConfig";
 import TaskBar from "./components/taskbar/Taskbar";
 import Desk from "./components/desk/Desk";
 
+import { desktopCN, sideBarCN, taskBarCN } from "./styles";
+
 const App = () => {
   const [windows, setWindows] = useState(windowsConfig);
 
@@ -37,11 +39,11 @@ const App = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="col-span-1 h-screen-max-vh text-white">Side Bar</div>
-      <div className="desk-container col-span-3 h-screen-max-vh">
+      <div className={sideBarCN}>Side Bar</div>
+      <div className={desktopCN}>
         <Desk windows={windows} onCloseWindow={(id) => onCloseWindow(id)} />
       </div>
-      <div className="col-span-4 flex h-screen-fill-vh items-center justify-center text-white">
+      <div className={taskBarCN}>
         <TaskBar windows={windows} onIconClick={(id) => onIconClick(id)} />
       </div>
     </div>

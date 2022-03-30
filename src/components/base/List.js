@@ -1,13 +1,15 @@
 import React from "react";
 import ListItem from "./ListItem";
 
+import { listContainerCN, listCN, listDividerCN } from "./styles";
+
 const List = ({ items }) => {
   return (
-    <div className="container mx-auto mt-10 flex justify-center">
-      <div className="w-5/6 rounded-lg bg-inherit ">
-        <ul className="divide-y-2 divide-gray-800 ">
+    <div className={listContainerCN}>
+      <div className={listCN}>
+        <ul className={listDividerCN}>
           {items.map((item) => (
-            <ListItem item={item} />
+            <ListItem item={item} key={item.id} />
           ))}
         </ul>
       </div>

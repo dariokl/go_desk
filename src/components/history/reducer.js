@@ -3,16 +3,8 @@ import { historyButtons } from "../../utils/contants";
 export const initialState = {
   buttons: historyButtons,
   topSites: [],
-  bookmarks: [
-    {
-      name: "stranica",
-      url: "www.google.com",
-    },
-    {
-      name: "stranica",
-      url: "www.google.com",
-    },
-  ],
+  bookmarks: [],
+  activeTab: "",
 };
 
 export const reducer = (state, action) => {
@@ -21,11 +13,25 @@ export const reducer = (state, action) => {
       return {
         ...state,
         buttons: state.buttons.map((button) =>
-          button.name === action.name
+          button.value === action.value
             ? { ...button, active: !button.active }
             : { ...button, active: !button.active }
         ),
+        activeTab: action.value,
       };
+    case "SET_BOOKMARKS": {
+      return {
+        ...state,
+        bookmarks: action.data,
+      };
+    }
+
+    case "SET_TOPSITES": {
+      return {
+        ...state,
+        topSites: action.data,
+      };
+    }
 
     default:
       return state;

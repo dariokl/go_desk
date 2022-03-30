@@ -5,6 +5,8 @@ import { Renderer } from "../Renderer";
 
 import Icon from "../base/Icon";
 
+import { windowCN, windowIconWrapperCN } from "./styles";
+
 const Window = ({ item, onCloseWindow }) => {
   const [position, setPosition] = useState({
     width: 400,
@@ -52,23 +54,13 @@ const Window = ({ item, onCloseWindow }) => {
         });
       }}
       minWidth={windowConfig.minWidth}
-      minHeight={windowConfig.min}
+      minHeight={windowConfig.minHeight}
       maxWidth={windowConfig.maxWidth}
       maxHeight={windowConfig.maxHeight}
       bounds=".desk-container"
     >
-      <div
-        className="
-  h-full w-full
-  rounded-lg
-  bg-gray-400
-  bg-opacity-50
-  p-1
-  outline-white 
-  backdrop-blur-lg
-  backdrop-filter"
-      >
-        <div className="flex cursor-default justify-end">
+      <div className={windowCN}>
+        <div className={windowIconWrapperCN}>
           <Icon
             name="IoIosSquareOutline"
             size={26}
