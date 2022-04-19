@@ -4,7 +4,7 @@ export const initialState = {
   buttons: historyButtons,
   topSites: [],
   bookmarks: [],
-  activeTab: "",
+  activeTab: "topSites",
 };
 
 export const reducer = (state, action) => {
@@ -14,8 +14,8 @@ export const reducer = (state, action) => {
         ...state,
         buttons: state.buttons.map((button) =>
           button.value === action.value
-            ? { ...button, active: !button.active }
-            : { ...button, active: !button.active }
+            ? { ...button, active: true }
+            : { ...button, active: false }
         ),
         activeTab: action.value,
       };
@@ -32,6 +32,22 @@ export const reducer = (state, action) => {
         topSites: action.data,
       };
     }
+
+    case "UPDATE_BOOKMARK":
+      return {
+        ...state,
+        bookmarks: state.bookmarks.map((bookmark) =>
+          bookmark.id === action.data.id ? { ...action.data } : bookmark
+        ),
+      };
+
+    case "DELETE_BOOKMARK":
+      return {
+        ...state,
+        bookmarks: state.bookmarks.filter(
+          (bookmark) => bookmark.id !== action.data
+        ),
+      };
 
     default:
       return state;

@@ -47,64 +47,21 @@ ${
 }
 `;
 
-export const listContainerCN = cntl`
-container 
-mx-auto 
-mt-10 
-flex 
-justify-center
-`;
-
-export const listCN = cntl`
-w-5/6 
-rounded-lg 
-bg-inherit
-`;
-
-export const listDividerCN = cntl`
-divide-y-2 
-divide-gray-800
-`;
-
-export const listItemCN = cntl`
-flex 
-justify-between 
-p-3 
+export const gridItemCN = cntl`
+hover:bg-orange-700
+rounded-xl
+group 
 transition 
-delay-200 
-hover:bg-white 
-hover:shadow-lg
+delay-400
+h-112 w-112 
+relative 
+flex flex-col 
+place-content-center 
+items-center
 `;
 
-export const listItemButtonCN = ({ isSaveButton }) => cntl`
-inline-block 
-rounded-sm
-px-1 py-1 
-bg-inherit
-text-black 
-font-medium 
-text-xs 
-leading-tight 
-hover:text-white
-focus:text-white
-focus:outline-none 
-focus:ring-0 
-transition 
-duration-150 
-ease-in-out
-
-${
-  isSaveButton
-    ? cntl`
-    active:bg-green-800 
-    focus:bg-green-700 
-    hover:bg-green-700 
-      `
-    : cntl`
-    active:bg-red-800 
-    focus:bg-red-700 
-    hover:bg-red-700 
-    
-    `
-}
+export const gridMenuCN = cntl`
+absolute
+bg-gray-800
+top-10
 `;

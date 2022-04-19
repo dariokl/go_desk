@@ -1,11 +1,11 @@
 /*global chrome*/
-
 import React, { useCallback, useReducer, useEffect } from "react";
 import { initialState, reducer } from "./reducer";
 
 import Search from "../base/Search";
 import NavButtons from "../base/NavButtons";
-import List from "../base/List";
+import List from "./components/List";
+import Grid from "../base/Grid";
 
 const TOP_SITES = "topSites";
 const BOOKMARKS = "bookmarks";
@@ -37,11 +37,45 @@ const History = () => {
     [dispatch]
   );
 
+  const handleItemUpdate = useCallback(
+    (item) => {
+      const { id, title } = item;
+
+      chrome.bookmarks.update(
+        id,
+        {
+          title,
+        },
+        () => {
+          dispatch({ type: "UPDATE_BOOKMARK", data: item });
+        }
+      );
+    },
+    [dispatch]
+  );
+
+  const handleItemDelete = useCallback(
+    ({ id }) => {
+      chrome.bookmarks.remove(id, () => {
+        dispatch({ type: "DELETE_BOOKMARK", data: id });
+      });
+    },
+    [dispatch]
+  );
+
   return (
     <div className="flex flex-col">
       <Search placeholder={getSearchPlaceHolder()} />
       <NavButtons buttons={history.buttons} onClick={onButtonClick} />
-      <List items={history.bookmarks} />
+      {history.activeTab === "topSites" ? (
+        <Grid items={history.topSites} />
+      ) : (
+        <List
+          items={history.bookmarks}
+          onUpdateItem={handleItemUpdate}
+          onDeleteItem={handleItemDelete}
+        />
+      )}
     </div>
   );
 };

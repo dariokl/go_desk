@@ -1,6 +1,7 @@
 import cntl from "cntl";
 
 export const windowCN = cntl`
+cursor-default
 overflow-y-scroll
 h-full w-full
 rounded-lg
@@ -14,6 +15,6 @@ backdrop-filter
 
 export const windowIconWrapperCN = cntl`
 flex 
-cursor-default 
+cursor-pointer 
 justify-end
 `;

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .h-112 {
+    height: 112px;
+  }
+  .w-112 {
+    width: 112px;
+  }
+}
+
 ::-webkit-scrollbar {
   padding: 10px;
   width: 6px;
