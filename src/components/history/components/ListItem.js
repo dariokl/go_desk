@@ -20,7 +20,7 @@ const ListItem = ({
         <input
           type="text"
           value={title}
-          className="h-6 w-full bg-inherit outline-none"
+          className="w-full bg-inherit outline-none"
           onInput={(e) => {
             setTitle(e.target.value);
           }}
@@ -41,7 +41,7 @@ const ListItem = ({
                   name="IoIosCheckmark"
                   size={28}
                   iconClass={
-                    "hidden group-hover:block transition duration-150 ease-in-out"
+                    "hidden group-hover:block transition duration-300 ease-in-out"
                   }
                 />
               </button>
@@ -55,11 +55,13 @@ const ListItem = ({
                   name="IoIosCheckmark"
                   size={28}
                   iconClass={
-                    "hidden group-hover:block transition duration-150 ease-in-out"
+                    "hidden group-hover:block transition duration-300 ease-in"
                   }
                 />
               </button>
             )}
+
+            <span className="pr-1" />
 
             <button
               className={listItemButtonCN({ isSaveButton: false })}
@@ -70,7 +72,7 @@ const ListItem = ({
                 name="IoIosClose"
                 size={26}
                 iconClass={
-                  "hidden group-hover:block transition duration-150 ease-in-out"
+                  "hidden group-hover:block transition duration-300 ease-in-out"
                 }
               />
             </button>

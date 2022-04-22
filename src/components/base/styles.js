@@ -35,29 +35,31 @@ transition
 duration-150 
 ease-in-out 
 ease-in-out 
-hover:bg-orange-700
-hover:bg-orange-700
+hover:bg-red-700
+hover:bg-red-700
 
 ${
   isActive
     ? cntl`
-      bg-orange-700
+      bg-red-700
       `
     : null
 }
 `;
 
 export const gridItemCN = cntl`
-hover:bg-orange-700
+hover:bg-red-700
 rounded-xl
 group 
 transition 
-delay-400
-h-112 w-112 
-relative 
+delay-150
+h-112 w-112
 flex flex-col 
-place-content-center 
 items-center
+justify-center
+relative
+text-center
+break-all
 `;
 
 export const gridMenuCN = cntl`

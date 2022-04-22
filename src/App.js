@@ -35,7 +35,7 @@ const App = () => {
     <div
       className="grid grid-cols-4"
       style={{
-        backgroundImage: "url(/bg.jpg)",
+        backgroundImage: "url(/bg2.jpg)",
         backgroundSize: "cover",
       }}
     >

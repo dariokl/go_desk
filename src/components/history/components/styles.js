@@ -2,14 +2,13 @@ import cntl from "cntl";
 
 export const listContainerCN = cntl`
 container 
-mx-auto 
 mt-10 
 flex 
 justify-center
 `;
 
 export const listCN = cntl`
-w-5/6 
+w-full
 rounded-lg 
 bg-inherit
 `;
@@ -39,9 +38,9 @@ focus:text-white
 focus:outline-none 
 focus:ring-0 
 transition 
-duration-150 
+duration-300 
 ease-in-out
-margin-1
+
 
 ${
   isSaveButton

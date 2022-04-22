@@ -1,6 +1,13 @@
+@import url('http://fonts.cdnfonts.com/css/dejavu-sans');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'DejaVu Sans', sans-serif;
+  font-size: medium;
+}
 
 @layer utilities {
   .h-112 {
