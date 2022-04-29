@@ -10,11 +10,14 @@ body {
 }
 
 @layer utilities {
-  .h-112 {
-    height: 112px;
+  .h-120 {
+    height: 120px;
   }
-  .w-112 {
-    width: 112px;
+  .min-w-60 {
+    min-width: 60px;
+  }
+  .max-w-120 {
+    max-width: 120px;
   }
 }
 

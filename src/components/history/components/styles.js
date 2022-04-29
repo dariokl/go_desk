@@ -67,3 +67,31 @@ delay-200
 hover:bg-white 
 hover:shadow-lg
 `;
+
+export const gridContainerCN = cntl`
+mt-20 
+mb-10 
+flex
+flex-wrap
+gap-2
+justify-center
+items-center
+`;
+
+export const gridItemCN = cntl`
+flex-[1_1_100%]
+hover:bg-red-700
+rounded-xl
+group 
+transition 
+delay-150
+h-120 
+min-w-60
+max-w-120
+flex flex-col 
+items-center
+justify-center
+relative
+text-center
+break-all
+`;

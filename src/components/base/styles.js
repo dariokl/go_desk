@@ -47,23 +47,15 @@ ${
 }
 `;
 
-export const gridItemCN = cntl`
-hover:bg-red-700
-rounded-xl
-group 
-transition 
-delay-150
-h-112 w-112
-flex flex-col 
-items-center
-justify-center
-relative
-text-center
-break-all
-`;
-
-export const gridMenuCN = cntl`
-absolute
-bg-gray-800
-top-10
+export const ButtonCN = cntl`
+overflow-hidden
+rounded-lg
+text-sm 
+outline
+outline-2
+outline-gray-700
+hover:bg-white
+transition
+duration-150
+px-2
 `;

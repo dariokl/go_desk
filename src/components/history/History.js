@@ -1,21 +1,22 @@
 /*global chrome*/
-import React, { useCallback, useReducer, useEffect } from "react";
+import React, { useCallback, useReducer, useEffect, useState } from "react";
 import { initialState, reducer } from "./reducer";
 
 import Search from "../base/Search";
 import NavButtons from "../base/NavButtons";
 import List from "./components/List";
-import Grid from "../base/Grid";
+import Grid from "./components/Grid";
 
 const TOP_SITES = "topSites";
 const BOOKMARKS = "bookmarks";
 
 const History = () => {
   const [history, dispatch] = useReducer(reducer, initialState);
+  const [counter, setCounter] = useState(5);
 
   useEffect(() => {
     if (history.activeTab === BOOKMARKS) {
-      chrome.bookmarks.getRecent(10, (data) => {
+      chrome.bookmarks.getRecent(counter, (data) => {
         dispatch({ type: "SET_BOOKMARKS", data });
       });
     }
@@ -24,7 +25,7 @@ const History = () => {
         dispatch({ type: "SET_TOPSITES", data });
       });
     }
-  }, [history.activeTab]);
+  }, [history.activeTab, counter]);
 
   const getSearchPlaceHolder = () => {
     return history.buttons.find((button) => button.active).searchPlaceholder;
@@ -36,6 +37,10 @@ const History = () => {
     },
     [dispatch]
   );
+
+  const handleLoadMoreBookmarks = useCallback(() => {
+    setCounter(counter + 5);
+  }, [counter]);
 
   const handleItemUpdate = useCallback(
     (item) => {
@@ -74,6 +79,7 @@ const History = () => {
           items={history.bookmarks}
           onUpdateItem={handleItemUpdate}
           onDeleteItem={handleItemDelete}
+          onLoadMoreBookmarks={handleLoadMoreBookmarks}
         />
       )}
     </div>

@@ -3,6 +3,7 @@ import cntl from "cntl";
 export const windowCN = cntl`
 cursor-default
 overflow-y-scroll
+overflow-x-hidden
 h-full w-full
 rounded-lg
 bg-gray-400

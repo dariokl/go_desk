@@ -1,13 +1,13 @@
 import React from "react";
-import Icon from "./Icon";
 
-import { iconParser, titleParser } from "../../utils/helpers";
+import Icon from "../../base/Icon";
+import { iconParser, titleParser } from "../../../utils/helpers";
 
-import { gridItemCN } from "./styles";
+import { gridItemCN, gridContainerCN } from "./styles";
 
 const Grid = ({ items }) => {
   return (
-    <div className="mt-20 mb-10 grid grid-flow-col auto-rows-max grid-rows-2">
+    <div className={gridContainerCN}>
       {items.map((item) => (
         <a
           href={item.url}

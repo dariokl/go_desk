@@ -1,9 +1,11 @@
 import React from "react";
+
+import Button from "../../base/Button";
 import ListItem from "./ListItem";
 
 import { listContainerCN, listCN, listDividerCN } from "./styles";
 
-const List = ({ items, onUpdateItem, onDeleteItem }) => {
+const List = ({ items, onUpdateItem, onDeleteItem, onLoadMoreBookmarks }) => {
   const handleEditClick = (item) => {
     onUpdateItem({ ...item, edit: true });
   };
@@ -40,6 +42,9 @@ const List = ({ items, onUpdateItem, onDeleteItem }) => {
             />
           ))}
         </ul>
+        <div className="bottom-0 mt-2 flex items-center justify-center">
+          <Button text={"Load More..."} onClick={onLoadMoreBookmarks} />
+        </div>
       </div>
     </div>
   );

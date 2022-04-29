@@ -22,7 +22,6 @@ const App = () => {
 
   const onCloseWindow = useCallback(
     (id) => {
-      console.log("here");
       setWindows(
         windows.map((window) =>
           window.id === id ? { ...window, active: !window.active } : window
