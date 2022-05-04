@@ -47,15 +47,22 @@ ${
 }
 `;
 
-export const ButtonCN = cntl`
+export const ButtonCN = (hoverColor) => cntl`
 overflow-hidden
+p-2
 rounded-lg
 text-sm 
 outline
 outline-2
 outline-gray-700
-hover:bg-white
 transition
 duration-150
+hover:text-gray-50
 px-2
-`;
+${
+  hoverColor
+    ? cntl`
+        hover:bg-${hoverColor}-700
+        `
+    : `hover:bg-gray-50`
+}`;
