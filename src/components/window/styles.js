@@ -15,6 +15,10 @@ backdrop-filter
 `;
 
 export const windowIconWrapperCN = cntl`
+bg-gradient-to-r 
+rounded-lg
+from-gray-800 
+to-transparent
 flex 
 cursor-pointer 
 justify-end

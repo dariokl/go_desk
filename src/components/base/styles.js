@@ -48,17 +48,15 @@ ${
 `;
 
 export const ButtonCN = (hoverColor) => cntl`
-overflow-hidden
-p-2
 rounded-lg
 text-sm 
 outline
-outline-2
+outline-1
 outline-gray-700
 transition
 duration-150
 hover:text-gray-50
-px-2
+p-2
 ${
   hoverColor
     ? cntl`

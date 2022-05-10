@@ -43,7 +43,11 @@ const List = ({ items, onUpdateItem, onDeleteItem, onLoadMoreBookmarks }) => {
           ))}
         </ul>
         <div className="bottom-0 mt-2 flex items-center justify-center">
-          <Button text={"Load More..."} onClick={onLoadMoreBookmarks} />
+          <Button
+            text="Load more..."
+            onClick={onLoadMoreBookmarks}
+            hoverColor="red"
+          />
         </div>
       </div>
     </div>

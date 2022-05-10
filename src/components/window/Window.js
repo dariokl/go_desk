@@ -11,8 +11,8 @@ const Window = ({ item, onCloseWindow }) => {
   const [position, setPosition] = useState({
     width: 400,
     height: 400,
-    x: 10,
-    y: 10,
+    x: 0,
+    y: 0,
   });
 
   const minMaxWindow = useCallback(() => {
