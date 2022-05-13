@@ -10,8 +10,8 @@ bg-gray-400
 bg-opacity-50
 p-1
 outline-white 
-backdrop-blur-lg
 backdrop-filter
+backdrop-blur-3xl
 `;
 
 export const windowIconWrapperCN = cntl`
