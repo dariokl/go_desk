@@ -33,8 +33,8 @@ text-black
 font-medium 
 text-xs 
 leading-tight 
-hover:text-white
-focus:text-white
+hover:text-gray-50
+focus:text-gray-50
 focus:outline-none 
 focus:ring-0 
 transition 
@@ -64,7 +64,7 @@ justify-between
 p-3 
 transition 
 delay-200 
-hover:bg-white 
+hover:bg-gray-50 
 hover:shadow-lg
 `;
 

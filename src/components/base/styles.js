@@ -9,7 +9,7 @@ text-sm
 placeholder-black transition  
 duration-700 
 hover:w-full 
-hover:bg-white 
+hover:bg-gray-50 
 hover:pr-16
 focus:outline-none
 `;
@@ -30,7 +30,7 @@ text-xs
 font-medium 
 uppercase 
 leading-tight 
-text-white 
+text-gray-50 
 transition 
 duration-150 
 ease-in-out 
