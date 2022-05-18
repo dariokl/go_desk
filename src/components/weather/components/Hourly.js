@@ -1,18 +1,20 @@
 import React from "react";
 
+import { hourlyContainerCN } from "./styles";
+
 const Houry = ({ forecast }) => {
   return (
     <>
-      <div class="mb-1 text-xs text-gray-50">Today</div>
-      <div class="mb-2 flex rounded-xl rounded-lg bg-gradient-to-r from-red-700 to-transparent p-2 shadow-xl">
+      <div className="mb-1 text-xs text-gray-50">Today</div>
+      <div className={hourlyContainerCN}>
         {forecast.map((i) => (
           <>
-            <div class="flex-1 text-center text-gray-50">
-              <div class="text-xs">{i.time}</div>
+            <div className="flex-1 text-center text-gray-50">
+              <div className="text-xs">{i.time}</div>
               <div>
-                <i class="bi bi-cloud-fill"></i>
+                <i className="bi bi-cloud-fill"></i>
               </div>
-              <div class="text-xs">{i.temperature}°</div>
+              <div className="text-xs">{i.temperature}°</div>
             </div>
           </>
         ))}

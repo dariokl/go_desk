@@ -80,17 +80,22 @@ items-center
 
 export const gridItemCN = cntl`
 flex-[1_1_100%]
-hover:bg-red-700
+hover:bg-gradient-to-r 
+hover:drop-shadow-2xl	
+hover:shadow-none
+shadow-lg
+from-red-700 
+to-transparent 
 rounded-xl
 group 
 transition 
-delay-150
+delay-200
 h-120 
 min-w-60
 max-w-120
-flex flex-col 
-items-center
+flex flex-col
 justify-center
+items-center 
 relative
 text-center
 break-all

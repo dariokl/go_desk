@@ -13,7 +13,7 @@ const Search = ({ placeholder }) => {
         placeholder={placeholder}
       />
       <button type="submit" className={searchButtonCN}>
-        <Icon name="IoIosSearch" size="16" />
+        <Icon name="IoIosSearch" size="16" iconColor="black" />
       </button>
     </div>
   );

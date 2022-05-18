@@ -65,11 +65,13 @@ const Window = ({ item, onCloseWindow }) => {
             name="IoIosSquareOutline"
             size={26}
             onClick={minMaxWindow}
+            iconColor="black"
           ></Icon>
           <Icon
             name="IoIosClose"
             size={26}
             onClick={() => onCloseWindow(item.id)}
+            iconColor="black"
           ></Icon>
         </div>
         <Renderer config={item} />

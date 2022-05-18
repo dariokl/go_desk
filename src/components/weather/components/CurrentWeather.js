@@ -16,27 +16,27 @@ const CurrentWeather = ({ current }) => {
 
   return (
     <>
-      <div class="mb-2 p-2">
-        <div class="text-center">
-          <div class="leading-tight text-gray-50">
+      <div className="mb-2 p-2">
+        <div className="text-center">
+          <div className="leading-tight text-gray-50">
             <Icon name={info.icon} size="48" />
           </div>
         </div>
       </div>
-      <div class="mb-1 p-1">
-        <div class="flex">
-          <div class="flex-1 text-center text-7xl text-gray-50">
-            <span class="fa fa-cloud"></span>
+      <div className="mb-1 p-1">
+        <div className="flex">
+          <div className="flex-1 text-center text-7xl text-gray-50">
+            <span className="fa fa-cloud"></span>
             {current?.temperature} °
           </div>
         </div>
       </div>
-      <div class="mb-2 p-2">
-        <div class="text-center">
-          <div class="text-lg leading-tight text-gray-50">
+      <div className="mb-2 p-2">
+        <div className="text-center">
+          <div className="text-lg leading-tight text-gray-50">
             Min {current?.min} ° / Max {current?.max} °
           </div>
-          <div class="mt-1 text-lg font-bold leading-tight text-gray-50">
+          <div className="mt-1 text-lg font-bold leading-tight text-gray-50">
             {info.weather}
           </div>
         </div>

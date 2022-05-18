@@ -16,9 +16,10 @@ backdrop-blur-3xl
 
 export const windowIconWrapperCN = cntl`
 bg-gradient-to-r 
-rounded-lg
 from-gray-700 
 to-transparent
+rounded-lg
+shadow-xl
 flex 
 cursor-pointer 
 justify-end
