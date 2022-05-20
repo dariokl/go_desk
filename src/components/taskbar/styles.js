@@ -34,7 +34,7 @@ rounded-xl
 border-none 
 bg-gray-800 
 transition 
-transition duration-300 
+transition duration-150 
 ease-in-out 
 hover:-translate-y-1 
 hover:scale-100 

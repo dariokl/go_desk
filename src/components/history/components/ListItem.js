@@ -41,7 +41,7 @@ const ListItem = ({
                   name="IoIosCheckmark"
                   size={28}
                   iconClass={
-                    "hidden group-hover:block transition duration-300 ease-in-out"
+                    "hidden group-hover:block transition duration-150 ease-in-out"
                   }
                 />
               </button>
@@ -55,7 +55,7 @@ const ListItem = ({
                   name="IoIosCheckmark"
                   size={28}
                   iconClass={
-                    "hidden group-hover:block transition duration-300 ease-in"
+                    "hidden group-hover:block transition duration-150 ease-in"
                   }
                 />
               </button>
@@ -72,7 +72,7 @@ const ListItem = ({
                 name="IoIosClose"
                 size={26}
                 iconClass={
-                  "hidden group-hover:block transition duration-300 ease-in-out"
+                  "hidden group-hover:block transition duration-150 ease-in-out"
                 }
               />
             </button>

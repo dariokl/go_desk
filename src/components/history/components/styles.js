@@ -38,7 +38,7 @@ focus:text-gray-50
 focus:outline-none 
 focus:ring-0 
 transition 
-duration-300 
+duration-150
 ease-in-out
 
 
@@ -99,4 +99,6 @@ items-center
 relative
 text-center
 break-all
+font-sans
+
 `;
