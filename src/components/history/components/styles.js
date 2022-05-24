@@ -102,3 +102,26 @@ break-all
 font-sans
 
 `;
+
+export const gridMenuContainerCN = cntl`
+absolute 
+top-0 h-1 
+w-full 
+rounded-lg 
+bg-gradient-to-r 
+from-gray-700 
+to-transparent 
+p-2 
+group-hover:bg-none
+`;
+
+export const gridMenuButtonCN = cntl`
+border-b-[1px] 
+border-red-700 
+text-sm 
+transition 
+delay-150 
+ease-in-out 
+hover:border-transparent 
+hover:text-gray-50
+`;

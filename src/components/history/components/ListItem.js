@@ -17,10 +17,12 @@ const ListItem = ({
   return (
     <li className={listItemCN}>
       {item.edit ? (
-        <input
-          type="text"
+        <textarea
+          rows="2"
+          cols="2"
+          wrap="soft"
           value={title}
-          className="w-full bg-inherit outline-none"
+          className="w-full resize-none bg-inherit outline-none"
           onInput={(e) => {
             setTitle(e.target.value);
           }}
@@ -57,6 +59,7 @@ const ListItem = ({
                   iconClass={
                     "hidden group-hover:block transition duration-150 ease-in"
                   }
+                  iconColor="black"
                 />
               </button>
             )}
@@ -74,6 +77,7 @@ const ListItem = ({
                 iconClass={
                   "hidden group-hover:block transition duration-150 ease-in-out"
                 }
+                iconColor="black"
               />
             </button>
           </>
@@ -84,6 +88,7 @@ const ListItem = ({
               name="IoIosTrash"
               size="18"
               onClick={() => onDeleteClick(item)}
+              iconColor="black"
             />
           </>
         )}

@@ -56,6 +56,7 @@ outline-gray-700
 transition
 duration-150
 hover:text-gray-50
+cursor-pointer
 p-2
 ${
   hoverColor

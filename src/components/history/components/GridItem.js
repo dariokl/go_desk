@@ -4,15 +4,16 @@ import Icon from "../../base/Icon";
 import Dropdown from "../../base/Dropdown";
 
 import { iconParser, titleParser } from "../../../utils/helpers";
-import { gridItemCN } from "./styles";
+import { gridItemCN, gridMenuContainerCN, gridMenuButtonCN } from "./styles";
 
 const GridItem = ({ url }) => {
   const [iconColor, setIconColor] = useState("black");
   const [open, setOpen] = useState(false);
 
   const handleOpenDropDown = useCallback(() => {
-    setOpen(!open);
-  }, [open]);
+    // TODO once chrome.topsites API supports deleting.
+    setOpen(false);
+  }, []);
 
   return (
     <div
@@ -33,17 +34,9 @@ const GridItem = ({ url }) => {
           </span>
         </a>
       )}
-      <div className="absolute top-0 h-1 w-full rounded-lg bg-gradient-to-r from-gray-700 to-transparent p-2 group-hover:bg-none">
+      <div className={gridMenuContainerCN}>
         <Dropdown onOpenDropDown={handleOpenDropDown}>
-          {open ? (
-            <ul className="mt-2 group-hover:text-white">
-              <li className="flex">
-                <span>Delete</span>
-              </li>
-              <li> Edit </li>
-              <li> Edit </li>
-            </ul>
-          ) : null}
+          {open ? <button class={gridMenuButtonCN}>Delete</button> : null}
         </Dropdown>
       </div>
     </div>
