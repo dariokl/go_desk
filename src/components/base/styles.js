@@ -8,9 +8,9 @@ px-5
 text-sm 
 placeholder-black transition  
 duration-700 
-hover:w-full 
-hover:bg-gray-50 
-hover:pr-16
+focus:w-full 
+focus:bg-gray-50 
+focus:pr-16
 focus:outline-none
 `;
 

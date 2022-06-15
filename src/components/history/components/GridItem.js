@@ -35,9 +35,11 @@ const GridItem = ({ url }) => {
         </a>
       )}
       <div className={gridMenuContainerCN}>
-        <Dropdown onOpenDropDown={handleOpenDropDown}>
-          {open ? <button class={gridMenuButtonCN}>Delete</button> : null}
-        </Dropdown>
+        <Dropdown
+          hasIcon
+          iconName="IoIosMore"
+          iconClass="absolute top-0 right-0"
+        />
       </div>
     </div>
   );

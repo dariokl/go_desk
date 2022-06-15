@@ -1,6 +1,6 @@
 import History from "../components/history/History";
 import Stocks from "../components/stocks/Stocks";
-import Rss from "../components/rss/Rss";
+import Reddit from "../components/reddit/Reddit";
 
 export const windowsConfig = [
   {
@@ -19,9 +19,9 @@ export const windowsConfig = [
   },
   {
     id: "item-2",
-    name: "RSS",
-    icon: "IoIosRadio",
-    component: Rss,
+    name: "Reddit",
+    icon: "IoIosReddit",
+    component: Reddit,
     active: false,
   },
 ];
